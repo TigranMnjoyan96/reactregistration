@@ -1,0 +1,62 @@
+@import '../variables';
+
+
+
+.step__one-form {
+  width: 50%;
+  margin: 0 auto;
+
+  .country {
+    select {
+      width: 100%;
+      padding: 10px 16px;
+      cursor: pointer;
+      color: $grey-dark;
+    }
+
+    label {
+      color: $grey-dark;
+    }
+  }
+
+  .phone__number {
+    margin: 26px 0 100px;
+
+    .phone__number-field {
+      padding: 10px 16px;
+      border: 1px solid $grey-light;
+      width: 100%;
+      color: $grey-dark;
+      &:focus {
+        outline: none
+      }
+    }
+
+    label {
+      color: $grey-dark;
+    }
+  }
+
+}
+
+.step__description {
+  display: flex;
+  justify-content: space-between;
+  .step__score {
+   flex: .7;
+    border-bottom: 2px solid black;
+  }
+  h2 {
+    flex: 1;
+  }
+}
+
+.invisible__btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  &.previous {
+    color: $primary;
+  }
+
+}

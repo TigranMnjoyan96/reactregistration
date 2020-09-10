@@ -1,0 +1,14 @@
+.step__score {
+  &.two {
+    width: 35%;
+  }
+}
+.blood {
+  input {
+    border: 1px solid red !important;
+  }
+  label {
+    color: red !important;
+  }
+
+}

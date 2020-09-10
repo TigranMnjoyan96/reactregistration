@@ -1,0 +1,80 @@
+@import '../variables';
+
+
+.registration__form-control {
+  padding-top: 40px;
+  text-align: center;
+
+  .registration__form-title {
+    font-size: 36px;
+    color: $green-dark;
+    margin: 0;
+  }
+
+  .for__example {
+    font-size: 16px;
+    color: $grey-dark
+  }
+
+  .progress__bar {
+    width: 100%;
+    margin: 50px auto;
+    border: 1px solid black;
+    height: 7px;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background: $grey-light;
+
+    .in__progress {
+      display: flex;
+      justify-content: space-between;
+      background: $green-light;
+      transition: $duration;
+    }
+
+    .step__by-step {
+      width: 100%;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      margin-top: -7px;
+      transition: $duration;
+
+      .progress__steps {
+        color: white;
+        background: $green-light;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        margin-left: auto;
+        transition: $duration;
+
+        &.current__step {
+          width: 30px;
+          height: 30px;
+          border: 2px solid white;
+          margin-top: -5px;
+          font-size: 15px;
+        }
+        .active__step-title {
+          display: block;
+          transition: 1s;
+          color: $green-light;
+          text-transform: uppercase;
+          margin-left: -5px;
+        }
+      }
+      .hide__inactive-step {
+        opacity: 0;
+      }
+    }
+
+  }
+}
+
+.step__controll {
+  width: 10%;
+}

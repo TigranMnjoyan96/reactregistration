@@ -1,0 +1,20 @@
+@import "../variables";
+
+.submited__form {
+  .submited__img {
+    width: 100%;
+  }
+}
+.submited__form-btn {
+  width: 0;
+  margin: 0 auto;
+  button {
+    background: $primary;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 9px 61px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+}
