@@ -91,7 +91,8 @@ export default ({conf}) => {
                 <NavLink to="/" onClick={() => conf(-10)} className="btn__previous-step">
                     <button className="invisible__btn previous">Previous</button>
                 </NavLink>
-                <NavLink to="/step-three" onClick={() => conf(10)} className={classNames('btn__next-step', {'isDisabled': isDisabled})}>
+
+                <NavLink to="/thanks" onClick={() => conf(null)} className={classNames('btn__next-step', {'isDisabled': isDisabled})}>
                     <button className="invisible__btn">Continue</button>
                 </NavLink>
             </div>

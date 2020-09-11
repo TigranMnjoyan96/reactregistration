@@ -1,0 +1,15 @@
+@import '../variables.scss';
+
+
+.step__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .step__score {
+     flex: .7;
+      border-bottom: 2px solid black;
+    }
+    h2 {
+      flex: 1;
+    }
+  }

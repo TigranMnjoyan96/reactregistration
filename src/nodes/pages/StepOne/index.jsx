@@ -4,6 +4,10 @@ import classNames from 'classnames'
 import axios from 'axios'
 import '../../../assets/style/pages/StepOne.scss'
 
+import { Title } from '../../components'
+
+
+// ! Phone number format
 function splitByThree(string){
     let new_array = [];
 
@@ -16,12 +20,16 @@ function splitByThree(string){
 
 export default ({conf}) => {
 
+    // ! State 
     const [countries, setCountries] = useState([])
     const [isDisabled, setIsDiabled] = useState(true)
     const [email, setEmail] = useState('')
     const [isTouched, setIsTouched] = useState(false)
     const [errMsg, setErrMsg] = useState(false)
+    const [nextStep, setNextStep] = useState(false)
+    const [nameIsValid, setNameIsValid] = useState(false)
 
+    // ! Did Mount?
     useEffect(() => {
         axios.get('http://restcountries.eu/rest/v2/region/europe')
             .then(res => {
@@ -30,6 +38,7 @@ export default ({conf}) => {
     }, [])
 
 
+    // ! Functionality
     const changeEmailHandler = (e) => {
         setIsTouched(true)
         let value = e.target.value.replace(/[^0-9.]/gi, "");
@@ -48,14 +57,12 @@ export default ({conf}) => {
 
     }
 
+
     return (
         <div>
 
                 <div className="step__one-form">
-                    <div className="step__description">
-                        <h2>Title</h2>
-                        <div className="step__score"></div>
-                    </div>
+                    <Title title="Title of the Form" />
                     <div className="country">
                         <label htmlFor="countries">Country</label>
                         <select name="" id="countries">
@@ -76,10 +83,16 @@ export default ({conf}) => {
                                value={email}
                                 onChange={changeEmailHandler}
                         />
+                        { nextStep ?  <div className={classNames({'blood': nameIsValid})}>
+                        <label htmlFor="userName" className="user__name-label">Name</label>
+                        <input id="userName" type="text" placeholder="Joe Doe" className="phone__number-field" />
+                        </div> : null}
+
+                            <button className={classNames('next__step-btn', {'none': nextStep, 'isDisabled': isDisabled})}  onClick={() => setNextStep(true)}>Next</button>
                     </div>
                 </div>
 
-            <div className="continue__btn start">
+            <div className={classNames('continue__btn start', {'none': !nextStep})}>
                 <NavLink to='/step-two' onClick={() => conf(1)}  className={classNames('btn__next-step', {'isDisabled': isDisabled})}>
                     <button  className="invisible__btn">Continue</button>
                 </NavLink>

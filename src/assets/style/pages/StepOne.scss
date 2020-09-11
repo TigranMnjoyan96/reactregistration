@@ -20,7 +20,7 @@
   }
 
   .phone__number {
-    margin: 26px 0 100px;
+    margin: 20px 0 100px;
 
     .phone__number-field {
       padding: 10px 16px;
@@ -35,21 +35,23 @@
     label {
       color: $grey-dark;
     }
+    .next__step-btn {
+      background: $green-light;
+      border-radius: 30px;
+      border: none;
+      padding: 6px 25px;
+      color: white;
+      display: block;
+      margin-left: auto;
+      margin-top: 10px;
+    }
+    .user__name-label {
+      margin-top: 20px;
+    }
   }
 
 }
 
-.step__description {
-  display: flex;
-  justify-content: space-between;
-  .step__score {
-   flex: .7;
-    border-bottom: 2px solid black;
-  }
-  h2 {
-    flex: 1;
-  }
-}
 
 .invisible__btn {
   border: none;

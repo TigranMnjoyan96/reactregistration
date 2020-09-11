@@ -1,0 +1,22 @@
+@import '../variables.scss';
+
+
+.thanks__for {
+    margin-top: 110px;
+    text-align: center;
+    h2 {
+        color: $green-light;
+        font-size: 36px;
+    }
+    .it__is-done {
+        font-size: 16px;
+        color: $grey-dark;
+    }
+    .form__is-completed {
+        font-size: 14px;
+        color: $grey-dark;
+        span {
+            color: $orange-dark;
+        }
+    }
+}

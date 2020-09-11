@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route} from 'react-router-dom'
-import {StepOne, StepTwo, StepThree, StepFour, StepFive, StepSix, StepSeven, StepEight, Submited} from '../pages'
+import {StepOne, StepTwo, Thanks, StepThree, StepFour, StepFive, StepSix, StepSeven, StepEight, Submited} from '../pages'
 
 
 export default ({conf}) => {
@@ -8,6 +8,7 @@ export default ({conf}) => {
         <div>
             <Route exact path='/'  render={() => <StepOne conf={conf} />}/>
             <Route path='/step-two' render={() => <StepTwo conf={conf} />}  />
+            <Route path='/thanks' render={() => <Thanks conf={conf} /> } />
             <Route path='/step-three' render={() => <StepThree conf={conf} />}/>
             <Route path='/step-four' render={() => <StepFour conf={conf} />} />
             <Route path='/step-five' render={() => <StepFive conf={conf} />} />

@@ -63,11 +63,20 @@ body {
 }
 
 .isDisabled {
-  background: grey !important;
+  background: $disable !important;
   pointer-events: none;
   cursor: not-allowed !important;
+  color: black !important;
 }
 
 .error__message {
   color: $err-message;
+}
+
+button {
+  outline: none !important;
+}
+
+.none {
+  display: none !important;
 }

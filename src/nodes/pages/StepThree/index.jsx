@@ -1,11 +1,12 @@
 import React from 'react'
 import {NavLink} from "react-router-dom";
+import { Title } from '../../components';
 
-export default ({conf}) => {
+export default ({conf, title}) => {
     
     return(
         <div>
-            <h2>Step Three</h2>
+            <Title title="title 3" />
             <div className="continue__btn">
                 <NavLink to='/step-two' onClick={() => conf(-1)} className="btn__previous-step">
                     <button  className="invisible__btn previous">Previous</button>
