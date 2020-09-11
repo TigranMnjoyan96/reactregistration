@@ -1,20 +1,42 @@
 @import '../variables.scss';
 
 .select__pop-up {
-    width: 250px;
+    width: 230px;
     height: 220px;
     background-color: white;
     position: absolute;
-    top: 40%;
-    right: 15%;
-    hr {
-        color: $grey-dark; 
+    top: 25%;
+    right: 10%;
+    border: 1px solid $grey-light;
+    .pop__up-indicator {
+        position: absolute;
+        top: 50%;
+        left: -9%;
+        border-right: 20px solid $grey-light;
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+    }
+    .under__date {
+        border-bottom: 1px solid $grey-light;
+        width: 100%;
+    }
+    .pop__up-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 25px 0;
+        ul {
+            li {
+                list-style: none;
+                margin-top: 19px;
+                color: $grey-dark;
+            }
+        }
     }
     .selected__title {
-        
         h2 {
             color: $green-dark;
             font-size: 24px;
+            margin: 0;
         }
     }
 }

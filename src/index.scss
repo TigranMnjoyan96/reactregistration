@@ -2,6 +2,7 @@
 @import 'https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet';
 @import './assets/style/variables.scss';
 
+
 * {
   margin: 0;
   padding: 0;
@@ -98,6 +99,12 @@ button {
       }
 }
 
+label {
+  color: $grey-dark;
+  display: block;
+  padding-bottom: 7px;
+}
+
 .button-step {
   background: $primary;
   color: white;
@@ -116,4 +123,10 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-bottom: 0.2rem;
-}  
+}
+
+.have__you-questions {
+  color: $green-dark;
+  font-size: 14px;
+  text-decoration: underline;
+}

@@ -1,0 +1,20 @@
+@import "../variables";
+
+
+.card__number-field {
+  .card__number-area {
+    margin-top: 20px;
+  }
+  .card__details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+  }
+  .card__more-details {
+    width: 40%;
+  }
+}
+
+.continue__or-prev {
+  padding-top: 80px;
+}

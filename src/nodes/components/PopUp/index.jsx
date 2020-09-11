@@ -6,15 +6,18 @@ export default () => {
     return(
         <div className="select__pop-up">
             <div className="container-fluid">
+                <div className="pop__up-indicator">
+                </div>
                 <div className="selected__title">
-                    <h2>Daily</h2>
+                    <h2>Daily
+                    </h2>
                 </div>
             </div>
-            <hr/>
+            <div className="under__date"></div>
             <div className="container-fluid">
-                <div>
+                <div className="pop__up-content">
                     <ul>
-                        <li>Water: </li>
+                        <li>Water: <i className="fa fa-face"></i> </li>
                         <li>Honey: </li>
                         <li> <b>Total: </b> </li>
                     </ul>
