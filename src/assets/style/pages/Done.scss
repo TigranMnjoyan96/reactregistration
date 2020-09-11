@@ -1,0 +1,17 @@
+@import '../variables.scss';
+
+
+.done__yeah {
+    text-align: center;
+    img {
+        width: 100%;
+    }
+    h2 {
+        color: $green-dark;
+        font-size: 36px;
+    }
+    p {
+        color: $grey-dark;
+        font-size: 16px;
+    }
+}

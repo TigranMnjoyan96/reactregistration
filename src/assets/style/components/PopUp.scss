@@ -1,0 +1,21 @@
+@import '../variables.scss';
+
+.select__pop-up {
+    width: 250px;
+    height: 220px;
+    background-color: white;
+    position: absolute;
+    top: 40%;
+    right: 15%;
+    hr {
+        color: $grey-dark; 
+    }
+    .selected__title {
+        
+        h2 {
+            color: $green-dark;
+            font-size: 24px;
+        }
+    }
+}
+

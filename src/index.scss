@@ -32,10 +32,16 @@ body {
   margin: 0 auto;
 }
 
+.container-fluid {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .continue__btn {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  color: white;
   &.start {
     justify-content: flex-end;
   }
@@ -75,8 +81,39 @@ body {
 
 button {
   outline: none !important;
+  color: white;
 }
 
 .none {
   display: none !important;
 }
+
+.input_field {
+  padding: 10px 16px;
+      border: 1px solid $grey-light;
+      width: 100%;
+      color: $grey-dark;
+      &:focus {
+        outline: none
+      }
+}
+
+.button-step {
+  background: $primary;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 9px 61px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 20px;  
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: 0.2rem;
+}  

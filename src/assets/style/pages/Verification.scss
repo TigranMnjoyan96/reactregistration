@@ -1,0 +1,20 @@
+@import '../variables.scss';
+
+
+.verification {
+    text-align: center;
+    .button-step {
+        margin-top: 60px;
+    }
+    
+     p {
+        color: $grey-dark;
+        font-size: 16px;
+        margin-bottom: 80px;   
+    }
+}
+
+
+.enter__email-verification {
+    color: $green-dark;
+}

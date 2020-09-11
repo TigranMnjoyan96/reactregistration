@@ -2,7 +2,7 @@
 
 
 .thanks__for {
-    margin-top: 110px;
+    padding-top: 40px;
     text-align: center;
     h2 {
         color: $green-light;
@@ -12,6 +12,11 @@
         font-size: 16px;
         color: $grey-dark;
     }
+    .thank__you {
+        font-size: 14px;
+        color: $grey-dark;
+        text-align: center;
+    }
     .form__is-completed {
         font-size: 14px;
         color: $grey-dark;
@@ -19,4 +24,17 @@
             color: $orange-dark;
         }
     }
+    img {
+        width: 100%;
+    }
+}
+
+.btn__next-step {
+    background: $primary;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 9px 61px;
+    border-radius: 30px;
+    cursor: pointer;
 }

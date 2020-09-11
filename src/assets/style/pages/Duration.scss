@@ -1,0 +1,27 @@
+@import '../variables.scss';
+
+
+.select_the-duration {
+    select {
+        width: 100%;
+        padding: 10px 16px;
+        cursor: pointer;
+        color: $grey-dark;
+    }
+    .please__select-one {
+        padding-top: 23px;
+        color: $grey-dark;  
+        font-size: 14px;
+    }
+    .have__you-questions {
+        color: $green-dark;
+        font-size: 14px;
+        text-decoration: underline;
+    }
+    
+}
+
+.continue__or-previous {
+    padding-top: 125px !important;
+    
+}
