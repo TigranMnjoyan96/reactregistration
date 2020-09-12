@@ -27,6 +27,9 @@ export default ({conf}) => {
     const [isTouched, setIsTouched] = useState(false)
     const [errMsg, setErrMsg] = useState(false)
     const [nextStep, setNextStep] = useState(false)
+    const [first, setFirst] = useState(true)
+    const [validName, setValidName] = useState(false)
+    const [nameTouched, setNameTouched] = useState(false)
     const [nameIsValid, setNameIsValid] = useState(false)
 
     // ! Did Mount?
@@ -57,6 +60,20 @@ export default ({conf}) => {
 
     }
 
+    const firstStep = () => {
+        setNextStep(true)
+        setNameTouched(true)
+
+        setFirst(false)
+    }
+
+    const changeUserNameHandler = (e) => {
+        if(nameTouched && e.target.value.length < 3) {
+            setNameIsValid(true)
+        } else {
+            setNameIsValid(false)
+        }
+    }
 
     return (
         <div>
@@ -78,24 +95,28 @@ export default ({conf}) => {
                         <label htmlFor="phone">Number</label>
                         <input type="text"
                                id="phone"
-                               className="phone__number-field"
+                               className={classNames('phone__number-field', {'user__name-field': !nextStep})}
                                placeholder="0-0000-0000"
                                value={email}
                                 onChange={changeEmailHandler}
                         />
-                        { nextStep ?  <div className={classNames({'blood': nameIsValid})}>
-                        <label htmlFor="userName" className="user__name-label">Name</label>
-                        <input id="userName" type="text" placeholder="Joe Doe" className="phone__number-field" />
-                        </div> : null}
-
-                            <button className={classNames('next__step-btn', {'none': nextStep, 'isDisabled': isDisabled})}  onClick={() => setNextStep(true)}>Next</button>
+                            {/*<button className={classNames('next__step-btn', {'none': nextStep, 'isDisabled': isDisabled})}  onClick={() => setNextStep(true)}>Next</button>*/}
                     </div>
+
+                    { nextStep ?  <div className={classNames({'blood': nameIsValid})}>
+                        <label htmlFor="userName" className="user__name-label">Name</label>
+                        <input id="userName" onChange={changeUserNameHandler} type="text" placeholder="Joe Doe" className="input_field user__name-field" />
+                    </div> : null}
                 </div>
 
-            <div className={classNames('continue__btn start', {'none': !nextStep})}>
-                <NavLink to='/step-two' onClick={() => conf(1)}  className={classNames('btn__next-step', {'isDisabled': isDisabled})}>
+            <div className={classNames('continue__btn start')}>
+                {
+                    first ? <button className="btn__next-step" onClick={firstStep}>Continue</button> :
+                    <NavLink to='/step-two' onClick={() => conf(1)}  className={classNames('btn__next-step', {'isDisabled': isDisabled })}>
                     <button  className="invisible__btn">Continue</button>
-                </NavLink>
+                    </NavLink>
+                }
+
             </div>
 
         </div>

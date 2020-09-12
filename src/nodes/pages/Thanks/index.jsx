@@ -12,7 +12,7 @@ export default ({conf}) => {
                 <p className="form__is-completed">Form is completed! <span>Please find your entry soon.</span></p>
                 <img src={mail} />
                 <p className="thank__you">Thank You!</p>
-                <NavLink to='/step-four'  onClick={() => conf(1)} className="btn__next-step">
+                <NavLink to='/verify'  onClick={() => conf(null)} className="btn__next-step">
                     Continue
                 </NavLink>
             </div>

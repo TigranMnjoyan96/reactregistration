@@ -5,25 +5,26 @@ import classNames from 'classnames'
 export default ({type}) => {
 
     const [steps] = useState([
-        { id: 1, step: 1, title: 'title' },
-        { id: 2, step: 2, title: 'title' },
-        { id: 3, step: 3, title: 'title' },
-        { id: 4, step: 4, title: 'title' },
+        { id: 1, step: 1, title: 'TITULAR' },
+        { id: 2, step: 2, title: 'Contact' },
+        { id: 3, step: 3, title: 'DURATION' },
+        { id: 4, step: 4, title: 'PREFER' },
         { id: 5, step: 5, title: 'title' },
-        { id: 6, step: 6, title: 'title' },
-        { id: 7, step: 7, title: 'title' },
-        { id: 8, step: 8, title: 'title' },
+        { id: 6, step: 6, title: 'title' }
     ])
     const [activeStep, setActiveStep] = useState(-2.5)
     const [currentStep, setCurrentStep] = useState(0)
 
     useEffect(() => {
         if(type >= 0) {
-            setActiveStep(activeStep + 12.5)
+            setActiveStep(activeStep + 16.6)
             setCurrentStep(currentStep + 1)
 
+        } else if(type[1]) {
+            setActiveStep(activeStep + 49.8)
+            setCurrentStep(3)
         } else {
-            setActiveStep(activeStep - 12.5)
+            setActiveStep(activeStep - 16.6)
             setCurrentStep(currentStep - 1)
         }
             

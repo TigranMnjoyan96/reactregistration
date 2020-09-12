@@ -13,14 +13,14 @@ export default ({conf}) => {
             <Route path='/duration' render={() => <Duration conf={conf} /> } />
             <Route path='/card' render={() => <Card conf={conf} /> } />
             <Route path='/complete' render={() => <Complete conf={conf} /> }  />
-            <Route path='/step-three' render={() => <StepThree conf={conf} />}/>
-            <Route path='/step-four' render={() => <StepFour conf={conf} />} />
-            <Route path='/step-five' render={() => <StepFive conf={conf} />} />
-            <Route path='/step-six' render={() => <StepSix conf={conf} />} />
-            <Route path='/step-seven' render={() => <StepSeven conf={conf} />} />
-            <Route path='/step-eight' render={() => <StepEight conf={conf} />} />
+            {/*<Route path='/step-three' render={() => <StepThree conf={conf} />}/>*/}
+            {/*<Route path='/step-four' render={() => <StepFour conf={conf} />} />*/}
+            {/*<Route path='/step-five' render={() => <StepFive conf={conf} />} />*/}
+            {/*<Route path='/step-six' render={() => <StepSix conf={conf} />} />*/}
+            {/*<Route path='/step-seven' render={() => <StepSeven conf={conf} />} />*/}
+            {/*<Route path='/step-eight' render={() => <StepEight conf={conf} />} />*/}
             <Route path='/done' component={Done} />
-            <Route path='/submited' component={Submited} />
+            {/*<Route path='/submited' component={Submited} />*/}
         </div>
     )
 }

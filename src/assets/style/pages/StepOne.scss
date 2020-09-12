@@ -20,7 +20,7 @@
   }
 
   .phone__number {
-    margin: 20px 0 100px;
+    margin: 20px 0 10px;
 
     .phone__number-field {
       padding: 10px 16px;
@@ -61,4 +61,8 @@
     color: $primary;
   }
 
+}
+
+.user__name-field {
+  margin-bottom: 120px;
 }

@@ -3,6 +3,7 @@
 
 .verification {
     text-align: center;
+  padding-top: 120px;
     .button-step {
         margin-top: 60px;
     }
@@ -17,4 +18,8 @@
 
 .enter__email-verification {
     color: $green-dark;
+}
+.verify__email {
+  display: flex;
+  justify-content: center;
 }

@@ -1,22 +1,30 @@
 import React from 'react'
 import classNames from 'classnames'
-import '../../../assets/style/pages/Duration.scss'
+import '../../../assets/style/pages/Duration.scss'  
 import { NavLink } from 'react-router-dom'
-import { Title, Duration, PopUp } from '../../components'
+import { Title, PopUp } from '../../components'
+
+import { useDispatch, useSelector } from 'react-redux'
 
 
+export default ({conf})  => {   
 
+    const state = useSelector(state => state.date)
+    const dispatch = useDispatch()
 
-export default ({conf})  => {
+    const changeDate = e => {
+        dispatch({type: 'CHANGE_DATE', payload: e.target.value})
+    }
+
     return(
         <div>
             <div className="container-lg">
                 <Title title="Select the Duration" />
                 <div className="select_the-duration">
-                    <select name="" id="">
-                    <option value="" selected>Daily</option>
-                    <option value="">Weekly</option>
-                    <option value="">Monthly</option>
+                    <select name="" id="" onChange={changeDate}>
+                    <option value="Daily" selected>Daily</option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Monthly">Monthly</option>
                     </select>
                     <p className="please__select-one">Please select one one from these to check your cyccle of the recurecnce. </p>
                     <p className="have__you-questions">¿Questions?</p>
@@ -27,11 +35,11 @@ export default ({conf})  => {
             <PopUp />
             
             <div className="continue__btn continue__or-previous">
-                <NavLink to="/" onClick={() => conf(-10)} className="btn__previous-step">
+                <NavLink to="/verify" onClick={() => conf(null)} className="btn__previous-step">
                     <button className="invisible__btn previous">Previous</button>
                 </NavLink>
 
-                <NavLink to="/thanks" onClick={() => conf(null)} className={classNames('btn__next-step')}>
+                <NavLink to="/card" onClick={() => conf(10)} className={classNames('btn__next-step')}>
                     <button className="invisible__btn">Continue</button>
                 </NavLink>
             </div>

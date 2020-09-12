@@ -6,6 +6,9 @@ import {NavLink} from "react-router-dom";
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 
+import { useSelector, useDispatch } from 'react-redux'
+
+
 
 const isValidEmail = email =>
   // eslint-disable-next-line no-useless-escape
@@ -25,9 +28,9 @@ export default ({conf}) => {
     const [phoneIsValid, setPhoneIsValid] = useState(true)
     const [touched, setTouched] = useState(false)
 
-
-
-
+    // redux-hooks
+    const state = useSelector(state => state.email)
+    const dispatch = useDispatch()
 
 
     //  * * Functions
@@ -36,14 +39,14 @@ export default ({conf}) => {
             setIsTouched(true)
             setIsInvalid(true)
             setEmail(e.target.value)
-        console.log(phoneIsValid, 222)
-
 
         if(isValidEmail(e.target.value) && isTouched) {
 
                 setIsDisabled(false)
                 setIsInvalid(false)
-            } 
+            }
+
+            dispatch({type: 'GET_EMAIL', payload: e.target.value})
     }
 
 
@@ -54,6 +57,8 @@ export default ({conf}) => {
         } else {
             setPhoneIsValid(true)  
         }
+
+        dispatch({type: 'GET_PHONE', payload: value})
     }
 
 
@@ -103,7 +108,7 @@ export default ({conf}) => {
                 </div>
             </div>
 
-            <div className="continue__btn">
+            <div className="continue__btn continue__or-previous">
                 <NavLink to="/" onClick={() => conf(-10)} className="btn__previous-step">
                     <button className="invisible__btn previous">Previous</button>
                 </NavLink>
