@@ -3,7 +3,7 @@
 
 
 .step__one-form {
-  width: 50%;
+  width: 353px;
   margin: 0 auto;
 
   .country {
@@ -20,7 +20,6 @@
   }
 
   .phone__number {
-    margin: 20px 0 10px;
 
     .phone__number-field {
       padding: 10px 16px;
@@ -52,7 +51,6 @@
 
 }
 
-
 .invisible__btn {
   border: none;
   background: none;
@@ -63,6 +61,26 @@
 
 }
 
-.user__name-field {
-  margin-bottom: 120px;
+.previous__btn-after {
+  justify-content: space-between !important;
 }
+.incorrect__inp-message {
+  text-align: right;
+  display: block;
+  color: $grey-dark;
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 7px;
+}
+.span__error-message {
+  color: $err-message;
+  font-size: 14px;
+}
+
+.show__name-field {
+  opacity: 0;
+}
+.hide__name-field {
+  opacity: 1;
+}
+

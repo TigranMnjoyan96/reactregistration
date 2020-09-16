@@ -108,11 +108,11 @@ export default ({conf}) => {
 
             </div>
             <div className="continue__btn continue__or-prev">
-                <NavLink to="/duration" onClick={() => conf(-10)} className="btn__previous-step">
+                <NavLink to="/Registrationform/3" onClick={() => conf(-10)} className="btn__previous-step">
                     <button className="invisible__btn previous">Previous</button>
                 </NavLink>
 
-                <NavLink to="/complete" onClick={() => conf(20)} className={classNames('btn__next-step', {'isDisabled': cardIsValid || dateIsValid || cardCvv})}>
+                <NavLink to="/Registrationform/5" onClick={() => conf(20)} className={classNames('btn__next-step', {'isDisabled': cardIsValid || dateIsValid || cardCvv})}>
                     <button className="invisible__btn">Continue</button>
                 </NavLink>
             </div>

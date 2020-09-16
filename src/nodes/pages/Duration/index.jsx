@@ -39,7 +39,7 @@ export default ({conf})  => {
                     <button className="invisible__btn previous">Previous</button>
                 </NavLink>
 
-                <NavLink to="/card" onClick={() => conf(10)} className={classNames('btn__next-step')}>
+                <NavLink to="/Registrationform/4" onClick={() => conf(10)} className={classNames('btn__next-step')}>
                     <button className="invisible__btn">Continue</button>
                 </NavLink>
             </div>

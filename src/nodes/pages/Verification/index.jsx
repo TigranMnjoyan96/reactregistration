@@ -32,7 +32,7 @@ export default ({conf}) => {
                     <input type="text" onChange={changeVerifyHandler} className={classNames('input_field')} />
                 </div>
                 <div className={classNames('continue__btn continue__or-previous verify__email')}>
-                    <NavLink to="/duration" onClick={() => conf([20, 'card'])} className={classNames('btn__next-step', {'isDisabled': verify || !isTouched})}>
+                    <NavLink to="/Registrationform/3" onClick={() => conf([20, 'card'])} className={classNames('btn__next-step', {'isDisabled': verify || !isTouched})}>
                         <button className="invisible__btn">Continue</button>
                     </NavLink>
                 </div>

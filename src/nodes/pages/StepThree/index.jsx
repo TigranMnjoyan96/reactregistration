@@ -8,10 +8,10 @@ export default ({conf, title}) => {
         <div>
             <Title title="title 3" />
             <div className="continue__btn">
-                <NavLink to='/step-two' onClick={() => conf(-1)} className="btn__previous-step">
+                <NavLink to='/Registrationform/2' onClick={() => conf(-1)} className="btn__previous-step">
                     <button  className="invisible__btn previous">Previous</button>
                 </NavLink>
-                <NavLink to='/step-four'  onClick={() => conf(1)} className="btn__next-step">
+                <NavLink to='/Registrationform/4'  onClick={() => conf(1)} className="btn__next-step">
                     <button  className="invisible__btn">Continue</button>
                 </NavLink>
             </div>
