@@ -19,6 +19,11 @@ function splitByThree(string){
     return new_array;
 }
 
+
+function validFullName(value) {
+    return value.match("^([a-zA-Z]{2,}\\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\\s?([a-zA-Z]{1,})?)")
+}
+
 export default ({conf}) => {
 
     // Using React hooks and redux
@@ -27,7 +32,6 @@ export default ({conf}) => {
 
     // ! State 
     const [countries, setCountries] = useState([])
-    const [isDisabled, setIsDiabled] = useState(true)
     const [email, setEmail] = useState('')
     const [isTouched, setIsTouched] = useState(false)
     const [errMsg, setErrMsg] = useState(false)
@@ -37,9 +41,28 @@ export default ({conf}) => {
     const [nameTouched, setNameTouched] = useState(false)
     const [nameIsValid, setNameIsValid] = useState(false)
 
+    // step two validation when clicking continue button
+    const [stepTwo, setStepTwo] = useState(false)
 
-    const [resolve, setResolve] = useState(false)
+    // static user name value
+    const [admin, setAdmin] = useState('Joe Doe')
+    // for admin validation
+    const [adminIsValid, setAdminIsValid] = useState(true)
+    //start typing admin name
+
+
+    // if phone number is invalid on second step
+    const [newErr, setNewErr] = useState(false)
+
+    // empty phone number input
+    const [empty, setEmpty] = useState(false)
+
+
+    const [resolve, setResolve] = useState(true)
     const [showName, setShowName] = useState(false)
+
+    // show errors when clicking button
+    const [start, setStart] = useState(false)
 
 
     // ! Did Mount?
@@ -48,10 +71,15 @@ export default ({conf}) => {
             .then(res => {
                 setCountries(res.data)
             })
-        console.log(state, 'state')
     }, [])
 
 
+    useEffect(() => {
+
+        if(showName && adminIsValid) {
+            setStepTwo(true)
+        }
+    })
     // ! Functionality
     const changeEmailHandler = (e) => {
         setIsTouched(true)
@@ -61,21 +89,22 @@ export default ({conf}) => {
 
             e.target.value = value_array.join('-');
             if(e.target.value.length >= 11 && e.target.value == '111-111-111') {
-                console.log(e.target.value, 'value')
                 setErrMsg(false)
-                setIsDiabled(false)
+                setStart(false)
             }else{
-                setIsDiabled(true)
                 setErrMsg(true)
+               setNewErr(true)
+            }
+            // if no any error hide 'please resolve the error'
+            if(!errMsg) {
+                setEmpty(true)
             }
             setEmail(e.target.value)
-
     }
 
     const firstStep = () => {
         setNextStep(true)
         setNameTouched(true)
-
         setFirst(false)
     }
 
@@ -87,17 +116,37 @@ export default ({conf}) => {
         }
     }
 
+    const changeAdminHandler  = e => {
+        setAdmin(e.target.value)
+        if(e.target.value == "Joe Doe") {
+            setAdminIsValid(true)
+        } else {
+            // need to show error
+            setAdminIsValid(false)
+        }
+        console.log(stepTwo, 'steptwo')
+    }
+
     const continueBtnHandler = () => {
+        console.log(111111111)
+        setStart(true)
+
         if(errMsg) {
             setResolve(true)
         } else if(!errMsg && isTouched) {
             setShowName(true)
         }
+
+        if(errMsg || empty) {
+            setStart(false)
+        }
+        if(stepTwo) {
+            setStepTwo(false)
+        }
     }
 
     return (
         <div>
-
                 <div className="step__one-form">
                     <Title title="Title of the Form" />
                     <div className="country aligned__input-bottom">
@@ -111,7 +160,7 @@ export default ({conf}) => {
                         </select>
                     </div>
 
-                    <div className={classNames('phone__number', 'aligned__input-bottom', {'blood': errMsg})}>
+                    <div className={classNames('phone__number', 'aligned__input-bottom', {'blood': !stepTwo && (errMsg || start)})}>
                         <label htmlFor="phone">Number</label>
                         <input type="text"
                                id="phone"
@@ -121,34 +170,31 @@ export default ({conf}) => {
                                onChange={changeEmailHandler}
                         />
                         {
-                            errMsg ?   <span className={classNames('span__error-message')}>Incorrect input message</span> : null
+                            !stepTwo && (errMsg || start) ?   <span className={classNames('span__error-message')}>Incorrect input message</span> : null
                         }
                     </div>
 
-                    <div className={classNames('show__name-field', 'aligned__input-bottom', {'hide__name-field': showName})}>
+                    <div className={classNames('show__name-field', 'aligned__input-bottom', {'blood': !adminIsValid && !stepTwo}, {'hide__name-field': showName})}>
                         <label htmlFor="name">Name</label>
-                        <input type="text" id="name" className={classNames('input_field')} />
+                        <input type="text" id="name" onChange={changeAdminHandler} value={admin} className={classNames('input_field')} />
                     </div>
-
                 </div>
 
             <div className={classNames('continue__btn start', {'previous__btn-after': showName})}>
                 {
                     showName ? <button className="btn__previous-step" onClick={() => setShowName(false)}>Previous</button> : null
                 }
-                <button className={classNames('btn__next-step')} onClick={continueBtnHandler}>Continue</button>
+                {
+                    showName && adminIsValid && stepTwo ? <NavLink to='/Registrationform/2' onClick={() => conf(1)}  className={classNames('btn__next-step')}>
+                                    <button  className="invisible__btn">Continue</button>
+                             </NavLink> : <button className={classNames('btn__next-step')} onClick={continueBtnHandler}>Continue</button>
+                }
             </div>
-
             {
-                resolve && errMsg ? <span className={classNames('incorrect__inp-message')}>PLease Resolve the error</span> : null
+                empty && errMsg || start || !adminIsValid && showName? <span className={classNames('incorrect__inp-message')}>PLease Resolve the error</span> : null
             }
 
         </div>
-
-
-
-
-
     );
 };
 
@@ -157,9 +203,7 @@ export default ({conf}) => {
 
 // {
 //     first ? <button className="btn__next-step" onClick={firstStep}>Continue</button> :
-//         <NavLink to='/Registrationform/2' onClick={() => conf(1)}  className={classNames('btn__next-step')}>
-//             <button  className="invisible__btn" onClick={continueButton}>Continue</button>
-//         </NavLink>
+//
 //
 // }
 // {

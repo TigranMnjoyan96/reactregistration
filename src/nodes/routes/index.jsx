@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route, Redirect, Switch, HashRouter} from 'react-router-dom'
-import {StepOne, StepTwo, Thanks, Verification, Duration, Card, Complete, StepThree, StepFour, StepFive, StepSix, StepSeven, StepEight, Done, Submited} from '../pages'
+import {StepOne, StepTwo, Thanks, Verification, Duration, AddNewUser, Card, Complete, StepThree, StepFour, StepFive, StepSix, StepSeven, StepEight, Done, Submited} from '../pages'
 
 
 export default ({conf}) => {
@@ -12,6 +12,7 @@ export default ({conf}) => {
                 <Route path='/thanks' render={() => <Thanks conf={conf} /> } />
                 <Route path='/verify' render={() => <Verification conf={conf} /> } />
                 <Route path='/Registrationform/3' render={() => <Duration conf={conf} /> } />
+                <Route path='/add-newuser' render={() => <AddNewUser />} />
                 <Route path='/Registrationform/4' render={() => <Card conf={conf} /> } />
                 <Route path='/Registrationform/5' render={() => <Complete conf={conf} /> } />
                 {/*<Route path='/step-three' render={() => <StepThree conf={conf} />}/>*/}

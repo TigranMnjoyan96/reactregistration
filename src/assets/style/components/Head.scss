@@ -2,7 +2,7 @@
 
 
 .registration__form-control {
-  padding-top: 40px;
+  padding-top: 72px;
   text-align: center;
 
   .registration__form-title {
@@ -13,13 +13,13 @@
 
   .for__example {
     font-size: 16px;
-    color: $grey-dark
+    color: $grey-dark;
+    margin-top: 15px;
   }
 
   .progress__bar {
     width: 100%;
     margin: 49px auto 76px;
-    border: 1px solid black;
     height: 7px;
     border-radius: 30px;
     position: relative;

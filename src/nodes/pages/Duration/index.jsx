@@ -27,14 +27,14 @@ export default ({conf})  => {
                     <option value="Monthly">Monthly</option>
                     </select>
                     <p className="please__select-one">Please select one one from these to check your cyccle of the recurecnce. </p>
-                    <p className="have__you-questions">¿Questions?</p>
+                    <NavLink className="have__you-questions" to="/add-newuser">¿Questions?</NavLink>
                 </div>
             
             </div>
 
             <PopUp />
             
-            <div className="continue__btn continue__or-previous">
+            <div className="continue__btn continue__or-previous duration__btn-continue">
                 <NavLink to="/verify" onClick={() => conf(null)} className="btn__previous-step">
                     <button className="invisible__btn previous">Previous</button>
                 </NavLink>

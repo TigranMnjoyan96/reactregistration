@@ -24,21 +24,25 @@ export default ({conf}) => {
         }
     }
     return(
-        <div className="container-lg">
-            <div className="verification">
-                <h2 className="enter__email-verification">Enter Email Verification</h2>
-                <p>Please enter verification</p>
-                <div className={classNames({'blood': verify})}>
-                    <input type="text" onChange={changeVerifyHandler} className={classNames('input_field')} />
-                </div>
-                <div className={classNames('continue__btn continue__or-previous verify__email')}>
-                    <NavLink to="/Registrationform/3" onClick={() => conf([20, 'card'])} className={classNames('btn__next-step', {'isDisabled': verify || !isTouched})}>
-                        <button className="invisible__btn">Continue</button>
-                    </NavLink>
+        <div className="container">
+                <div className="verification">
+                    <h2 className="enter__email-verification">Enter Email Verification</h2>
+                    <p className="please__enter-verification">Please enter verification</p>
+                    <div className="step__one-form">
+                        <div className={classNames({'blood': verify})}>
+                            <input type="text" onChange={changeVerifyHandler} className={classNames('input_field')} />
+                        </div>
+                        <div className={classNames('continue__btn continue__or-previous verify__email')}>
+                            <NavLink to="/Registrationform/3" onClick={() => conf([20, 'card'])} className={classNames('btn__next-step')}>
+                                <button className="invisible__btn">Verify</button>
+                            </NavLink>
+                        </div>
+                    </div>
+
+
+                    {/*<button className={classNames('button-step')}>Verify</button>*/}
                 </div>
 
-                {/*<button className={classNames('button-step')}>Verify</button>*/}
-            </div>
         </div>
         
     )

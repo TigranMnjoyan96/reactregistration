@@ -3,7 +3,7 @@
 
 .verification {
     text-align: center;
-  padding-top: 120px;
+  padding-top: 232px;
     .button-step {
         margin-top: 60px;
     }
@@ -11,15 +11,20 @@
      p {
         color: $grey-dark;
         font-size: 16px;
-        margin-bottom: 80px;   
+        margin-bottom: 82px;
     }
 }
 
 
 .enter__email-verification {
     color: $green-dark;
+  font-size: 36px;
+  margin: 0;
 }
 .verify__email {
   display: flex;
   justify-content: center;
+}
+.please__enter-verification {
+  margin-top: 19px;
 }

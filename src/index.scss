@@ -43,7 +43,7 @@ body {
   display: flex;
   justify-content: space-between;
   color: white;
-  margin-top: 75px;
+  margin-top: 66px;
   &.start {
     justify-content: flex-end;
   }
@@ -137,4 +137,21 @@ p {
   color: $green-dark;
   font-size: 14px;
   text-decoration: underline;
+  margin-top: 18px;
+}
+//.flag-dropdown {
+//  width: 110px;
+//}
+.selected-flag {
+  width: 110px !important;
+}
+
+.react-tel-input {
+  .form-control {
+    width: 100% !important;
+    border-radius: 0 !important;
+    height: 40px !important;
+    padding-left: 130px !important;
+    background-color: white !important;
+  }
 }

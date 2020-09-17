@@ -10,5 +10,10 @@
   label {
     color: red !important;
   }
+}
 
+.form__control-lables {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
 }

@@ -86,10 +86,14 @@ setPasswordTouched(true)
                     <button className="invisible__btn previous">Previous</button>
                 </NavLink>
 
-                <NavLink to="/done" onClick={() => conf(null)} className={classNames('btn__next-step',  {'isDisabled': nameIsValid || emailIsValid || password})}>
+                <NavLink to="/done" onClick={() => conf(null)} className={classNames('btn__next-step')}>
                     <button className="invisible__btn">Complete it! </button>
                 </NavLink>
+
             </div>
         </div>
     )
 }
+
+
+// {'isDisabled': nameIsValid || emailIsValid || password}

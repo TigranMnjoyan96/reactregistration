@@ -3,15 +3,19 @@
 
 .done__yeah {
     text-align: center;
+    width: 736px;
     img {
         width: 100%;
     }
     h2 {
         color: $green-dark;
         font-size: 36px;
+        margin-top: 128px;
+        margin-bottom: 0;
     }
     p {
         color: $grey-dark;
         font-size: 16px;
+        margin-top: 19px;
     }
 }

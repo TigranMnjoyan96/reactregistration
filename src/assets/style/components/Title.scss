@@ -5,14 +5,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  padding-bottom: 38px;
+    padding-bottom: 34px;
     .step__score {
-     width: 180px;
+       flex: 1;
       border-bottom: 1px solid $under-score;
     }
     h2 {
       flex: 1;
       margin: 0;
       color: $purple-dark;
+      font-size: 19.5px;
     }
   }
+
+.step__description .short {
+  flex: .5;
+}

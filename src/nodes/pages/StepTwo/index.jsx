@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
 import '../../../assets/style/pages/StepTwo.scss'
-import {NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom"
+
+import Title from '../../components/Title'
 
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
@@ -62,36 +64,14 @@ export default ({conf}) => {
     }
 
 
-
     return (
         <div>
 
             <div className="step__one-form">
-                <div className="step__description">
-                    <h2>Title of The Form</h2>
-                    <div className="step__score two"></div>
-                </div>
-                <p className="information__featured">Information Feautred</p>
+                <Title title="Information" />
 
-                <div className={classNames('country', {'blood': phoneIsValid && touched})}>
-
-                        <label htmlFor="phone">Phone</label>
-                    <PhoneInput
-                    inputProps={{
-                        name: 'phone',
-                        required: true  
-                    }}
-                    country={'us'}
-                   onChange={changePhoneHandler}
-
-                />
-                { 
-                    phoneIsValid && touched ? <span className={classNames('error__message')}>Enter Valid Contact number</span> : null
-                }
-                </div>
-
-                <div className={classNames('phone__number', {'blood': !!isInvalid})}>
-                    <label htmlFor="email">Email</label>
+                <div className={classNames('phone__number', 'aligned__input-bottom', {'blood': !!isInvalid})}>
+                    <label htmlFor="email">Email Address</label>
                     <input type="email"
                            id="email"
                            className="phone__number-field"
@@ -103,9 +83,30 @@ export default ({conf}) => {
                     {
                     isInvalid ? <span className={classNames('error__message')}>Please enter a valid email address</span>
                         : null
-                      
                     }
                 </div>
+
+                <div className={classNames('country', {'blood': phoneIsValid && touched})}>
+
+                    <div className={classNames('form__control-lables')}>
+                        <label htmlFor="phone">Code</label>
+                        <label htmlFor="">Contact</label>
+                    </div>
+
+                    <PhoneInput
+                        inputProps={{
+                            name: 'phone',
+                            required: true
+                        }}
+                        country='de'
+                        onChange={changePhoneHandler}
+
+                    />
+                    {
+                        phoneIsValid && touched ? <span className={classNames('error__message')}>Enter Valid Contact number</span> : null
+                    }
+                </div>
+
             </div>
 
             <div className="continue__btn continue__or-previous">

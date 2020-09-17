@@ -102,7 +102,12 @@ export default ({conf}) => {
                         </div>
 
                     </div>
-                    <p className="have__you-questions">Questions?</p>
+
+                    <div className={classNames('promo__code')}>
+                        <label htmlFor="promo">Promo code</label>
+                        <input type="text" className={classNames('input_field')} />
+                    </div>
+                    {/*<p className="have__you-questions">Questions?</p>*/}
 
                 </div>
 
@@ -112,7 +117,7 @@ export default ({conf}) => {
                     <button className="invisible__btn previous">Previous</button>
                 </NavLink>
 
-                <NavLink to="/Registrationform/5" onClick={() => conf(20)} className={classNames('btn__next-step', {'isDisabled': cardIsValid || dateIsValid || cardCvv})}>
+                <NavLink to="/Registrationform/5" onClick={() => conf(20)} className={classNames('btn__next-step', )}>
                     <button className="invisible__btn">Continue</button>
                 </NavLink>
             </div>
@@ -120,3 +125,5 @@ export default ({conf}) => {
 
     )
 }
+
+// {'isDisabled': cardIsValid || dateIsValid || cardCvv}

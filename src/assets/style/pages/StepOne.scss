@@ -55,6 +55,7 @@
   border: none;
   background: none;
   cursor: pointer;
+  font-weight: 800;
   &.previous {
     color: $primary;
   }
@@ -63,6 +64,7 @@
 
 .previous__btn-after {
   justify-content: space-between !important;
+  margin-top: 75px;
 }
 .incorrect__inp-message {
   text-align: right;
@@ -78,9 +80,9 @@
 }
 
 .show__name-field {
-  opacity: 0;
+  display: none;
 }
 .hide__name-field {
-  opacity: 1;
+  display: block;
 }
 
